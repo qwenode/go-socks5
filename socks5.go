@@ -131,7 +131,7 @@ func (s *Server) ServeConn(conn net.Conn) error {
 
 	// Ensure we are compatible
 	if version[0] != socks5Version {
-		err := fmt.Errorf("Unsupported SOCKS version: %v", version)
+		err := fmt.Errorf("Unsupported SOCKS version: %v", version[0])
 		s.config.Logger.Printf("[ERR] socks: %v", err)
 		return err
 	}
